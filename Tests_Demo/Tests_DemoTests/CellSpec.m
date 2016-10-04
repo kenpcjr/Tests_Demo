@@ -14,21 +14,21 @@
 
 SpecBegin(Cell)
 describe(@"Cell", ^{
+    
+    Cell *cell = [[Cell alloc]init];
+    
     it(@"is dead on creation", ^{
-        Cell *cell = [[Cell alloc]init];
     
         expect([cell isAlive]).to.equal(NO);
     });
     
     it(@"is alive when brought to life", ^{
-        Cell *cell = [[Cell alloc]init];
         
         [cell resurrect];
         expect([cell isAlive]).to.equal(YES);
     });
     
     it(@"is dead when killed after being brought back to life", ^{
-        Cell *cell = [[Cell alloc]init];
         
         [cell resurrect];
         [cell kill];
